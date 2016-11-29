@@ -9,6 +9,7 @@
 #import "HotelBL.h"
 #import "MKNetworkKit.h"
 #import "TBXML.h"
+#import "BLHelp.h"
 
 #define HOST_NAME @"jiagexian.com"
 #define KEY_QUERY_URL @"/ajaxplcheck.mobile?method=mobilesuggest&v=1&city=%@"
@@ -33,7 +34,8 @@ static HotelBL *instance = nil;
         NSLog(@"request Data : %@",completedRequest.responseAsString);
         NSData* data = [completedRequest responseData];
         NSDictionary* resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"BLRequestCompleted" object:resDict];
+        [[NSNotificationCenter defaultCenter] postNotificationName:BLQueryKeyFinishedNotification object:resDict];
+        
     }];
     
     
@@ -132,14 +134,14 @@ static HotelBL *instance = nil;
                         //取出lowprice
                         TBXMLElement* lowpriceElment = [TBXML childElementNamed:@"lowprice" parentElement:hotelElement];
                         if (lowpriceElment) {
-                            NSString* lowpriceText = [TBXML textForElement:lowpriceElment];
+                            NSString* lowpriceText = [BLHelp prePrice:[TBXML textForElement:lowpriceElment]];
                             [dict setValue:lowpriceText forKey:@"lowprice"];
                         }
                         
                         //取出grade
                         TBXMLElement* gradeElment = [TBXML childElementNamed:@"grade" parentElement:hotelElement];
                         if (gradeElment) {
-                            NSString* gradeText = [TBXML textForElement:gradeElment];
+                            NSString* gradeText = [BLHelp preGrade:[TBXML textForElement:gradeElment]];
                             [dict setValue:gradeText forKey:@"grade"];
                         }
                         
@@ -158,9 +160,11 @@ static HotelBL *instance = nil;
             }
         }
         
-        NSDictionary* resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"BLRequestCompleted" object:list];   //postName 需要定义
+        NSLog(@"解析完成...");
+        [[NSNotificationCenter defaultCenter] postNotificationName:BLQueryHotelFinishedNotification object:list];   //postName 需要定义
     }];
+    //发出请求
+    [host startRequest:request];
 }
 
 @end
