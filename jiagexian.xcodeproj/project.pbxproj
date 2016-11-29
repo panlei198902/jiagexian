@@ -15,6 +15,9 @@
 		C29CAC501DEAD6AA005044F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29CAC4E1DEAD6AA005044F5 /* LaunchScreen.storyboard */; };
 		C29CAC5B1DEAD6AA005044F5 /* jiagexianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC5A1DEAD6AA005044F5 /* jiagexianTests.m */; };
 		C29CAC661DEAD6AA005044F5 /* jiagexianUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC651DEAD6AA005044F5 /* jiagexianUITests.m */; };
+		C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */; };
+		C29CAC7A1DEAD7C9005044F5 /* KeysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC791DEAD7C9005044F5 /* KeysViewController.m */; };
+		C29CAC7D1DEAD7D6005044F5 /* RoomsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = C29CAC3C1DEAD6AA005044F5;
 			remoteInfo = jiagexian;
+		};
+		C29CACA71DEAD85B005044F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C29CAC881DEAD85A005044F5;
+			remoteInfo = BusinessLayer;
+		};
+		C29CACA91DEAD85B005044F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C29CAC911DEAD85A005044F5;
+			remoteInfo = BusinessLayerTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,6 +68,13 @@
 		C29CAC611DEAD6AA005044F5 /* jiagexianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jiagexianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29CAC651DEAD6AA005044F5 /* jiagexianUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jiagexianUITests.m; sourceTree = "<group>"; };
 		C29CAC671DEAD6AA005044F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C29CAC751DEAD7B5005044F5 /* CitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesViewController.h; sourceTree = "<group>"; };
+		C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
+		C29CAC781DEAD7C9005044F5 /* KeysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeysViewController.h; sourceTree = "<group>"; };
+		C29CAC791DEAD7C9005044F5 /* KeysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeysViewController.m; sourceTree = "<group>"; };
+		C29CAC7B1DEAD7D6005044F5 /* RoomsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewController.h; sourceTree = "<group>"; };
+		C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsTableViewController.m; sourceTree = "<group>"; };
+		C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BusinessLayer.xcodeproj; path = BusinessLayer/BusinessLayer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +105,7 @@
 		C29CAC341DEAD6AA005044F5 = {
 			isa = PBXGroup;
 			children = (
+				C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */,
 				C29CAC3F1DEAD6AA005044F5 /* jiagexian */,
 				C29CAC591DEAD6AA005044F5 /* jiagexianTests */,
 				C29CAC641DEAD6AA005044F5 /* jiagexianUITests */,
@@ -101,6 +126,8 @@
 		C29CAC3F1DEAD6AA005044F5 /* jiagexian */ = {
 			isa = PBXGroup;
 			children = (
+				C29CAC741DEAD6CC005044F5 /* Tableviewcell */,
+				C29CAC731DEAD6B7005044F5 /* Tableview */,
 				C29CAC431DEAD6AA005044F5 /* AppDelegate.h */,
 				C29CAC441DEAD6AA005044F5 /* AppDelegate.m */,
 				C29CAC461DEAD6AA005044F5 /* ViewController.h */,
@@ -138,6 +165,35 @@
 				C29CAC671DEAD6AA005044F5 /* Info.plist */,
 			);
 			path = jiagexianUITests;
+			sourceTree = "<group>";
+		};
+		C29CAC731DEAD6B7005044F5 /* Tableview */ = {
+			isa = PBXGroup;
+			children = (
+				C29CAC751DEAD7B5005044F5 /* CitiesViewController.h */,
+				C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */,
+				C29CAC781DEAD7C9005044F5 /* KeysViewController.h */,
+				C29CAC791DEAD7C9005044F5 /* KeysViewController.m */,
+				C29CAC7B1DEAD7D6005044F5 /* RoomsTableViewController.h */,
+				C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */,
+			);
+			name = Tableview;
+			sourceTree = "<group>";
+		};
+		C29CAC741DEAD6CC005044F5 /* Tableviewcell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tableviewcell;
+			sourceTree = "<group>";
+		};
+		C29CACA31DEAD85A005044F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C29CACA81DEAD85B005044F5 /* BusinessLayer.framework */,
+				C29CACAA1DEAD85B005044F5 /* BusinessLayerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +291,12 @@
 			mainGroup = C29CAC341DEAD6AA005044F5;
 			productRefGroup = C29CAC3E1DEAD6AA005044F5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C29CACA31DEAD85A005044F5 /* Products */;
+					ProjectRef = C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C29CAC3C1DEAD6AA005044F5 /* jiagexian */,
@@ -243,6 +305,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C29CACA81DEAD85B005044F5 /* BusinessLayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BusinessLayer.framework;
+			remoteRef = C29CACA71DEAD85B005044F5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C29CACAA1DEAD85B005044F5 /* BusinessLayerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BusinessLayerTests.xctest;
+			remoteRef = C29CACA91DEAD85B005044F5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C29CAC3B1DEAD6AA005044F5 /* Resources */ = {
@@ -277,7 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C29CAC481DEAD6AA005044F5 /* ViewController.m in Sources */,
+				C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */,
+				C29CAC7D1DEAD7D6005044F5 /* RoomsTableViewController.m in Sources */,
 				C29CAC451DEAD6AA005044F5 /* AppDelegate.m in Sources */,
+				C29CAC7A1DEAD7C9005044F5 /* KeysViewController.m in Sources */,
 				C29CAC421DEAD6AA005044F5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +596,7 @@
 				C29CAC6C1DEAD6AA005044F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C29CAC6D1DEAD6AA005044F5 /* Build configuration list for PBXNativeTarget "jiagexianTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +605,7 @@
 				C29CAC6F1DEAD6AA005044F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C29CAC701DEAD6AA005044F5 /* Build configuration list for PBXNativeTarget "jiagexianUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +614,7 @@
 				C29CAC721DEAD6AA005044F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
