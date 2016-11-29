@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2570DC51DED80FE0067E87D /* BLHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = C2570DC31DED80FE0067E87D /* BLHelp.h */; };
+		C2570DC61DED80FE0067E87D /* BLHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = C2570DC41DED80FE0067E87D /* BLHelp.m */; };
 		C29CAC921DEAD85A005044F5 /* BusinessLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29CAC881DEAD85A005044F5 /* BusinessLayer.framework */; };
 		C29CAC971DEAD85A005044F5 /* BusinessLayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC961DEAD85A005044F5 /* BusinessLayerTests.m */; };
 		C29CACF51DEADA84005044F5 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CACEE1DEADA84005044F5 /* TBXML+Compression.m */; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2570DC31DED80FE0067E87D /* BLHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLHelp.h; sourceTree = "<group>"; };
+		C2570DC41DED80FE0067E87D /* BLHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLHelp.m; sourceTree = "<group>"; };
 		C29CAC881DEAD85A005044F5 /* BusinessLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusinessLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29CAC8C1DEAD85A005044F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C29CAC911DEAD85A005044F5 /* BusinessLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +157,8 @@
 		C29CAC8A1DEAD85A005044F5 /* BusinessLayer */ = {
 			isa = PBXGroup;
 			children = (
+				C2570DC31DED80FE0067E87D /* BLHelp.h */,
+				C2570DC41DED80FE0067E87D /* BLHelp.m */,
 				C29CAD441DEADCA0005044F5 /* PrefixHeader.pch */,
 				C29CAC8C1DEAD85A005044F5 /* Info.plist */,
 				C29CAD451DEADDC1005044F5 /* HotelBL.h */,
@@ -264,6 +270,7 @@
 				C29CAD331DEADBA9005044F5 /* MKNetworkHost.h in Headers */,
 				C29CAD251DEADBA9005044F5 /* NSDictionary+MKNKAdditions.h in Headers */,
 				C29CAD2F1DEADBA9005044F5 /* UIImageView+MKNKAdditions.h in Headers */,
+				C2570DC51DED80FE0067E87D /* BLHelp.h in Headers */,
 				C29CACFA1DEADA84005044F5 /* TBXML.h in Headers */,
 				C29CAD351DEADBA9005044F5 /* MKNetworkKit.h in Headers */,
 				C29CAD2B1DEADBA9005044F5 /* NSString+MKNKAdditions.h in Headers */,
@@ -392,6 +399,7 @@
 				C29CACF51DEADA84005044F5 /* TBXML+Compression.m in Sources */,
 				C29CAD341DEADBA9005044F5 /* MKNetworkHost.m in Sources */,
 				C29CAD4C1DEADDD0005044F5 /* RoomBL.m in Sources */,
+				C2570DC61DED80FE0067E87D /* BLHelp.m in Sources */,
 				C29CAD2C1DEADBA9005044F5 /* NSString+MKNKAdditions.m in Sources */,
 				C29CAD281DEADBA9005044F5 /* NSHTTPURLResponse+MKNKAdditions.m in Sources */,
 				C29CAD301DEADBA9005044F5 /* UIImageView+MKNKAdditions.m in Sources */,
@@ -526,7 +534,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = /Users/derexpan/Programing/jiagexian/BusinessLayer/BusinessLayer/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Derexpan/Code/jiagexian/BusinessLayer/BusinessLayer/PrefixHeader.pch;
 				INFOPLIST_FILE = BusinessLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -545,7 +553,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = /Users/derexpan/Programing/jiagexian/BusinessLayer/BusinessLayer/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Derexpan/Code/jiagexian/BusinessLayer/BusinessLayer/PrefixHeader.pch;
 				INFOPLIST_FILE = BusinessLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -596,6 +604,7 @@
 				C29CAC9E1DEAD85A005044F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C29CAC9F1DEAD85A005044F5 /* Build configuration list for PBXNativeTarget "BusinessLayerTests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +613,7 @@
 				C29CACA11DEAD85A005044F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
