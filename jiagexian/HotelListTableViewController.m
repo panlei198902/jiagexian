@@ -1,32 +1,27 @@
 //
-//  CitiesViewController.m
+//  HotelListTableViewController.m
 //  jiagexian
 //
-//  Created by derex pan on 2016/11/27.
+//  Created by Derexpan on 2016/11/30.
 //  Copyright © 2016年 derex pan. All rights reserved.
 //
 
-#import "CitiesViewController.h"
+#import "HotelListTableViewController.h"
 
-@interface CitiesViewController ()
+@interface HotelListTableViewController ()
 
 @end
 
-@implementation CitiesViewController
+@implementation HotelListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString* cityPlistPath = [[NSBundle mainBundle] pathForResource:@"cities" ofType:@"plist"];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    //排序
-    NSSortDescriptor* bySpell = [NSSortDescriptor sortDescriptorWithKey:@"spell"ascending:YES];
-    self.cities = [[NSArray arrayWithContentsOfFile:cityPlistPath] sortedArrayUsingDescriptors:@[bySpell]];
-    
-    
-}
-- (IBAction)cancelButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,36 +29,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - 数据源协议方法
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 1;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.cities.count;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    NSDictionary* dict = [self.cities objectAtIndex:indexPath.row];
-    cell.textLabel.text = dict[@"name"];
-    cell.detailTextLabel.text = dict[@"spell"];
+    // Configure the cell...
     
     return cell;
 }
-
-#pragma mark -表视图委托协议方法
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *dict = [self.cities objectAtIndex:indexPath.row];
-    [self.delegate closeCitiesView:dict];
-    NSLog(@"%@ - %@",dict[@"name"], dict[@"spell"]);
-}
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

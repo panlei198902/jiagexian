@@ -18,6 +18,9 @@
 		C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */; };
 		C29CAC7A1DEAD7C9005044F5 /* KeysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC791DEAD7C9005044F5 /* KeysViewController.m */; };
 		C29CAC7D1DEAD7D6005044F5 /* RoomsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */; };
+		C2CACDCE1DEEA49300FC2BD1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACDCD1DEEA49300FC2BD1 /* AboutViewController.m */; };
+		C2CACDD31DEEA54F00FC2BD1 /* HotelListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACDD21DEEA54F00FC2BD1 /* HotelListTableViewController.m */; };
+		C2CACDD51DEEAB1900FC2BD1 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2CACDD41DEEAB1900FC2BD1 /* cities.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,11 @@
 		C29CAC7B1DEAD7D6005044F5 /* RoomsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewController.h; sourceTree = "<group>"; };
 		C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsTableViewController.m; sourceTree = "<group>"; };
 		C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BusinessLayer.xcodeproj; path = BusinessLayer/BusinessLayer.xcodeproj; sourceTree = "<group>"; };
+		C2CACDCC1DEEA49300FC2BD1 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		C2CACDCD1DEEA49300FC2BD1 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		C2CACDD11DEEA54F00FC2BD1 /* HotelListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListTableViewController.h; sourceTree = "<group>"; };
+		C2CACDD21DEEA54F00FC2BD1 /* HotelListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListTableViewController.m; sourceTree = "<group>"; };
+		C2CACDD41DEEAB1900FC2BD1 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,7 @@
 				C29CAC471DEAD6AA005044F5 /* ViewController.m */,
 				C29CAC491DEAD6AA005044F5 /* Main.storyboard */,
 				C29CAC4C1DEAD6AA005044F5 /* Assets.xcassets */,
+				C2CACDD41DEEAB1900FC2BD1 /* cities.plist */,
 				C29CAC4E1DEAD6AA005044F5 /* LaunchScreen.storyboard */,
 				C29CAC511DEAD6AA005044F5 /* Info.plist */,
 				C29CAC401DEAD6AA005044F5 /* Supporting Files */,
@@ -176,6 +185,10 @@
 				C29CAC791DEAD7C9005044F5 /* KeysViewController.m */,
 				C29CAC7B1DEAD7D6005044F5 /* RoomsTableViewController.h */,
 				C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */,
+				C2CACDCC1DEEA49300FC2BD1 /* AboutViewController.h */,
+				C2CACDCD1DEEA49300FC2BD1 /* AboutViewController.m */,
+				C2CACDD11DEEA54F00FC2BD1 /* HotelListTableViewController.h */,
+				C2CACDD21DEEA54F00FC2BD1 /* HotelListTableViewController.m */,
 			);
 			name = Tableview;
 			sourceTree = "<group>";
@@ -331,6 +344,7 @@
 				C29CAC501DEAD6AA005044F5 /* LaunchScreen.storyboard in Resources */,
 				C29CAC4D1DEAD6AA005044F5 /* Assets.xcassets in Resources */,
 				C29CAC4B1DEAD6AA005044F5 /* Main.storyboard in Resources */,
+				C2CACDD51DEEAB1900FC2BD1 /* cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +369,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2CACDD31DEEA54F00FC2BD1 /* HotelListTableViewController.m in Sources */,
 				C29CAC481DEAD6AA005044F5 /* ViewController.m in Sources */,
 				C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */,
 				C29CAC7D1DEAD7D6005044F5 /* RoomsTableViewController.m in Sources */,
+				C2CACDCE1DEEA49300FC2BD1 /* AboutViewController.m in Sources */,
 				C29CAC451DEAD6AA005044F5 /* AppDelegate.m in Sources */,
 				C29CAC7A1DEAD7C9005044F5 /* KeysViewController.m in Sources */,
 				C29CAC421DEAD6AA005044F5 /* main.m in Sources */,

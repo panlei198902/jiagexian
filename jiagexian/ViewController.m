@@ -25,5 +25,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -实现citiesViewControllerDelegate协议
+- (void)closeCitiesView:(NSDictionary*)info {
+    self.cityInfo = info;
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 @end

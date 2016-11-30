@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CitiesViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CitiesViewControllerDelegate>
 
+@property (nonatomic, strong) NSDictionary* cityInfo;
 
 @end
 
