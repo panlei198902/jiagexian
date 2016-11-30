@@ -32,4 +32,13 @@
 
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"CitySegue"]) {
+        UINavigationController* nvgViewController = (UINavigationController*)[segue destinationViewController];
+        CitiesViewController* citiesViewController = (CitiesViewController*)nvgViewController.topViewController ;
+        citiesViewController.cityDelegate = self;
+        
+    }
+}
+
 @end

@@ -60,7 +60,7 @@
 #pragma mark -表视图委托协议方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dict = [self.cities objectAtIndex:indexPath.row];
-    [self.delegate closeCitiesView:dict];
+    [self.cityDelegate closeCitiesView:dict];
     NSLog(@"%@ - %@",dict[@"name"], dict[@"spell"]);
 }
 

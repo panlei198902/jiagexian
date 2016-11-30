@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CitiesViewControllerDelegate <NSObject>
+@protocol CitiesViewControllerDelegate
 
 - (void)closeCitiesView:(NSDictionary*)info;
 
@@ -20,6 +20,6 @@
 @property (nonatomic, strong)NSArray* cities;
 
 //委托对象属性
-@property (nonatomic, weak) id<CitiesViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<CitiesViewControllerDelegate> cityDelegate;
 
 @end
