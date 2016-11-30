@@ -10,4 +10,9 @@
 
 @interface RoomBL : NSObject
 
++ (instancetype)sharedInstance;
+
+//查询酒店查询
+- (void)queryRoom:(NSDictionary*)keyInfo;
+
 @end
