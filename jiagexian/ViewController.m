@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "HotelBL.h"
 @interface ViewController ()
 
 @end
@@ -36,7 +36,8 @@
 - (void)closeCitiesView:(NSDictionary*)info {
     self.cityInfo = info;
     [self dismissViewControllerAnimated:YES completion:nil];
-
+    NSString* cityname = info[@"name"];
+    self.selectCity.titleLabel.text = cityname;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -49,10 +50,40 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:@"selectKey"] && [self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
+    if ([identifier isEqualToString:@"SelectKey"] && [self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
         UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:@"请先选择城市" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+        [alertView addAction:cancelButton];
+        [self presentViewController:alertView animated:YES completion:nil];
+        
+        return NO;
+    } else if ([identifier isEqualToString:@"SelectKey"]) {
+        [[HotelBL sharedHoteolBL] selectKey:self.selectKey.titleLabel.text];
+        return NO;
+    } else if ([identifier isEqualToString:@"queryHotel"]) {
+        NSString *errorMsg;
+        
+        if ([self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
+            errorMsg = @"请选择城市";
+        } else if ([self.selectKey.titleLabel.text isEqualToString:@"选择关键字"]) {
+            errorMsg = @"请选择关键字";
+        } else if ([self.checkInTime.titleLabel.text isEqualToString:@"入住时间"]) {
+            errorMsg = @"请选择入住日期";
+        } else if ([self.checkOutTime.titleLabel.text isEqualToString:@"退房时间"]) {
+            errorMsg = @"请选择退房时间";
+        }
+        
+        if (errorMsg) {
+            UIAlertController *noSelectAnItem = [UIAlertController alertControllerWithTitle:@"提示信息" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+            [noSelectAnItem addAction:cancelButton];
+            [self presentViewController:noSelectAnItem animated:YES completion:nil];
+            
+            return NO;
+        }
         
     }
+    return YES;
 }
 
 
@@ -70,6 +101,7 @@
     } else if (self.checkoutDateViewController == controller) {
         [self.checkOutTime setTitle:strDate forState:UIControlStateNormal];
     }
+
 }
 
 - (void)myPickViewClose:(NSString*)selected {
