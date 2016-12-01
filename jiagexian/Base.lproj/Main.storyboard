@@ -56,24 +56,28 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14W-Ac-QZC">
-                                <rect key="frame" x="147" y="265" width="62" height="30"/>
+                                <rect key="frame" x="110" y="258" width="187" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="价格范围"/>
+                                <connections>
+                                    <action selector="selectPrice:" destination="pjW-f1-VTY" eventType="touchUpInside" id="Cqt-zR-Sf4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDk-CO-R9J">
                                 <rect key="frame" x="147" y="326" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="选择日期"/>
+                                <connections>
+                                    <action selector="selectData:" destination="pjW-f1-VTY" eventType="touchUpInside" id="ttP-Uc-ftl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-Ii-WcR">
-                                <rect key="frame" x="147" y="385" width="62" height="30"/>
+                                <rect key="frame" x="117" y="383" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="入住时间"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-Ye-dD3">
-                                <rect key="frame" x="147" y="446" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="退房时间"/>
+                                <connections>
+                                    <action selector="selectCheckin:" destination="pjW-f1-VTY" eventType="touchUpInside" id="jTJ-v2-Wjm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-gn-gG7">
                                 <rect key="frame" x="163" y="515" width="31" height="30"/>
@@ -83,14 +87,28 @@
                                     <segue destination="iSM-l2-O4s" kind="show" id="cHF-xz-jmj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-Ye-dD3">
+                                <rect key="frame" x="125" y="443" width="125" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="退房时间"/>
+                                <connections>
+                                    <action selector="selectCheckout:" destination="pjW-f1-VTY" eventType="touchUpInside" id="ljk-fR-vBH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="酒店搜索" id="ent-ML-jPi"/>
+                    <connections>
+                        <outlet property="checkInTime" destination="Ux7-Ii-WcR" id="FmR-5W-Lfx"/>
+                        <outlet property="checkOutTime" destination="IFi-Ye-dD3" id="dhe-vB-sGG"/>
+                        <outlet property="priceRange" destination="14W-Ac-QZC" id="7Ra-B3-g5R"/>
+                        <outlet property="selectDate" destination="mDk-CO-R9J" id="5q9-Ic-sW5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXg-Zn-hhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="-658"/>
+            <point key="canvasLocation" x="564" y="-658.02098950524737"/>
         </scene>
         <!--城市选择-->
         <scene sceneID="Moa-Wv-Q5Z">

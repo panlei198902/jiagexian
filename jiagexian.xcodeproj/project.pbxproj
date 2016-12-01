@@ -21,6 +21,12 @@
 		C2CACDCE1DEEA49300FC2BD1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACDCD1DEEA49300FC2BD1 /* AboutViewController.m */; };
 		C2CACDD31DEEA54F00FC2BD1 /* HotelListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACDD21DEEA54F00FC2BD1 /* HotelListTableViewController.m */; };
 		C2CACDD51DEEAB1900FC2BD1 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2CACDD41DEEAB1900FC2BD1 /* cities.plist */; };
+		C2CACE421DEFC60600FC2BD1 /* BusinessLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29CACA81DEAD85B005044F5 /* BusinessLayer.framework */; };
+		C2CACE431DEFC60600FC2BD1 /* BusinessLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29CACA81DEAD85B005044F5 /* BusinessLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2CACE4D1DEFC7C100FC2BD1 /* MyDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACE481DEFC7C100FC2BD1 /* MyDatePickerViewController.m */; };
+		C2CACE4E1DEFC7C100FC2BD1 /* MyDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2CACE491DEFC7C100FC2BD1 /* MyDatePickerViewController.xib */; };
+		C2CACE4F1DEFC7C100FC2BD1 /* MyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACE4B1DEFC7C100FC2BD1 /* MyPickerViewController.m */; };
+		C2CACE501DEFC7C100FC2BD1 /* MyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2CACE4C1DEFC7C100FC2BD1 /* MyPickerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +58,28 @@
 			remoteGlobalIDString = C29CAC911DEAD85A005044F5;
 			remoteInfo = BusinessLayerTests;
 		};
+		C2CACE441DEFC60600FC2BD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C29CAC871DEAD85A005044F5;
+			remoteInfo = BusinessLayer;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C2CACE411DEFC5FD00FC2BD1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C2CACE431DEFC60600FC2BD1 /* BusinessLayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C29CAC3D1DEAD6AA005044F5 /* jiagexian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jiagexian.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +110,18 @@
 		C2CACDD11DEEA54F00FC2BD1 /* HotelListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListTableViewController.h; sourceTree = "<group>"; };
 		C2CACDD21DEEA54F00FC2BD1 /* HotelListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListTableViewController.m; sourceTree = "<group>"; };
 		C2CACDD41DEEAB1900FC2BD1 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
+		C2CACE281DEFC38F00FC2BD1 /* MyDatePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDatePickerViewController.h; sourceTree = "<group>"; };
+		C2CACE291DEFC38F00FC2BD1 /* MyDatePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDatePickerViewController.m; sourceTree = "<group>"; };
+		C2CACE2A1DEFC38F00FC2BD1 /* MyDatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDatePickerViewController.xib; sourceTree = "<group>"; };
+		C2CACE2B1DEFC38F00FC2BD1 /* MyPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPickerViewController.h; sourceTree = "<group>"; };
+		C2CACE2C1DEFC38F00FC2BD1 /* MyPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPickerViewController.m; sourceTree = "<group>"; };
+		C2CACE2D1DEFC38F00FC2BD1 /* MyPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPickerViewController.xib; sourceTree = "<group>"; };
+		C2CACE471DEFC7C100FC2BD1 /* MyDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDatePickerViewController.h; sourceTree = "<group>"; };
+		C2CACE481DEFC7C100FC2BD1 /* MyDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDatePickerViewController.m; sourceTree = "<group>"; };
+		C2CACE491DEFC7C100FC2BD1 /* MyDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDatePickerViewController.xib; sourceTree = "<group>"; };
+		C2CACE4A1DEFC7C100FC2BD1 /* MyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPickerViewController.h; sourceTree = "<group>"; };
+		C2CACE4B1DEFC7C100FC2BD1 /* MyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerViewController.m; sourceTree = "<group>"; };
+		C2CACE4C1DEFC7C100FC2BD1 /* MyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPickerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2CACE421DEFC60600FC2BD1 /* BusinessLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +158,7 @@
 				C29CAC591DEAD6AA005044F5 /* jiagexianTests */,
 				C29CAC641DEAD6AA005044F5 /* jiagexianUITests */,
 				C29CAC3E1DEAD6AA005044F5 /* Products */,
+				C2CACE261DEFC38E00FC2BD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +175,7 @@
 		C29CAC3F1DEAD6AA005044F5 /* jiagexian */ = {
 			isa = PBXGroup;
 			children = (
+				C2CACE461DEFC7AE00FC2BD1 /* 自定义控件 */,
 				C29CAC741DEAD6CC005044F5 /* Tableviewcell */,
 				C29CAC731DEAD6B7005044F5 /* Tableview */,
 				C29CAC431DEAD6AA005044F5 /* AppDelegate.h */,
@@ -209,6 +251,41 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C2CACE261DEFC38E00FC2BD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2CACE271DEFC38F00FC2BD1 /* 自定义控件 */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2CACE271DEFC38F00FC2BD1 /* 自定义控件 */ = {
+			isa = PBXGroup;
+			children = (
+				C2CACE281DEFC38F00FC2BD1 /* MyDatePickerViewController.h */,
+				C2CACE291DEFC38F00FC2BD1 /* MyDatePickerViewController.m */,
+				C2CACE2A1DEFC38F00FC2BD1 /* MyDatePickerViewController.xib */,
+				C2CACE2B1DEFC38F00FC2BD1 /* MyPickerViewController.h */,
+				C2CACE2C1DEFC38F00FC2BD1 /* MyPickerViewController.m */,
+				C2CACE2D1DEFC38F00FC2BD1 /* MyPickerViewController.xib */,
+			);
+			name = "自定义控件";
+			path = "PopupControl/PopupControl/自定义控件";
+			sourceTree = "<group>";
+		};
+		C2CACE461DEFC7AE00FC2BD1 /* 自定义控件 */ = {
+			isa = PBXGroup;
+			children = (
+				C2CACE471DEFC7C100FC2BD1 /* MyDatePickerViewController.h */,
+				C2CACE481DEFC7C100FC2BD1 /* MyDatePickerViewController.m */,
+				C2CACE491DEFC7C100FC2BD1 /* MyDatePickerViewController.xib */,
+				C2CACE4A1DEFC7C100FC2BD1 /* MyPickerViewController.h */,
+				C2CACE4B1DEFC7C100FC2BD1 /* MyPickerViewController.m */,
+				C2CACE4C1DEFC7C100FC2BD1 /* MyPickerViewController.xib */,
+			);
+			name = "自定义控件";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,10 +296,12 @@
 				C29CAC391DEAD6AA005044F5 /* Sources */,
 				C29CAC3A1DEAD6AA005044F5 /* Frameworks */,
 				C29CAC3B1DEAD6AA005044F5 /* Resources */,
+				C2CACE411DEFC5FD00FC2BD1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C2CACE451DEFC60600FC2BD1 /* PBXTargetDependency */,
 			);
 			name = jiagexian;
 			productName = jiagexian;
@@ -341,10 +420,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2CACE501DEFC7C100FC2BD1 /* MyPickerViewController.xib in Resources */,
 				C29CAC501DEAD6AA005044F5 /* LaunchScreen.storyboard in Resources */,
 				C29CAC4D1DEAD6AA005044F5 /* Assets.xcassets in Resources */,
 				C29CAC4B1DEAD6AA005044F5 /* Main.storyboard in Resources */,
 				C2CACDD51DEEAB1900FC2BD1 /* cities.plist in Resources */,
+				C2CACE4E1DEFC7C100FC2BD1 /* MyDatePickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,8 +453,10 @@
 				C2CACDD31DEEA54F00FC2BD1 /* HotelListTableViewController.m in Sources */,
 				C29CAC481DEAD6AA005044F5 /* ViewController.m in Sources */,
 				C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */,
+				C2CACE4D1DEFC7C100FC2BD1 /* MyDatePickerViewController.m in Sources */,
 				C29CAC7D1DEAD7D6005044F5 /* RoomsTableViewController.m in Sources */,
 				C2CACDCE1DEEA49300FC2BD1 /* AboutViewController.m in Sources */,
+				C2CACE4F1DEFC7C100FC2BD1 /* MyPickerViewController.m in Sources */,
 				C29CAC451DEAD6AA005044F5 /* AppDelegate.m in Sources */,
 				C29CAC7A1DEAD7C9005044F5 /* KeysViewController.m in Sources */,
 				C29CAC421DEAD6AA005044F5 /* main.m in Sources */,
@@ -408,6 +491,11 @@
 			isa = PBXTargetDependency;
 			target = C29CAC3C1DEAD6AA005044F5 /* jiagexian */;
 			targetProxy = C29CAC621DEAD6AA005044F5 /* PBXContainerItemProxy */;
+		};
+		C2CACE451DEFC60600FC2BD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BusinessLayer;
+			targetProxy = C2CACE441DEFC60600FC2BD1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -524,6 +612,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2NHV9XL52A;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = jiagexian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = derex.jiagexian;
@@ -536,6 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2NHV9XL52A;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = jiagexian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = derex.jiagexian;

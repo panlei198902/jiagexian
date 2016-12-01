@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.checkinDateViewController = [[MyDatePickerViewController alloc] init];
+    self.checkinDateViewController.delegate = self;
+    
+    self.checkoutDateViewController = [[MyDatePickerViewController alloc] init];
+    self.checkoutDateViewController.delegate = self;
+    
+    self.priceSelect = [[MyPickerViewController alloc] init];
+    self.priceSelect.delegate = self;
 }
 
 
@@ -40,5 +47,43 @@
         
     }
 }
+
+#pragma mark -实现MyPickerViewController和MyDataPickerView协议
+- (void)myPickDateViewControllerDidFinish:(MyDatePickerViewController *)controller andSelectedDate:(NSDate*)selected {
+    NSDateFormatter* date = [[NSDateFormatter alloc] init];
+    [date setDateFormat:@"yyyy-MM-dd"];
+    NSLocale* locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    [date setLocale:locale];
+    
+    NSString* strDate = [date stringFromDate:selected];
+    
+    if (self.checkinDateViewController == controller) {
+        [self.checkInTime setTitle:strDate forState:UIControlStateNormal];
+    } else if (self.checkoutDateViewController == controller) {
+        [self.checkOutTime setTitle:strDate forState:UIControlStateNormal];
+    }
+}
+
+- (void)myPickViewClose:(NSString*)selected {
+    [self.priceRange setTitle:selected forState:UIControlStateNormal];
+}
+
+- (IBAction)selectPrice:(id)sender {
+    [self.priceSelect showInView:self.view];
+}
+- (IBAction)selectData:(id)sender {
+    [self.checkoutDateViewController showInView:self.view];
+}
+- (IBAction)selectCheckin:(id)sender {
+    [self.checkinDateViewController showInView:self.view];
+
+}
+- (IBAction)selectCheckout:(id)sender {
+    [self.checkoutDateViewController showInView:self.view];
+
+}
+
+
+
 
 @end
