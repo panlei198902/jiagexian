@@ -35,7 +35,7 @@
 #pragma mark -实现citiesViewControllerDelegate协议
 - (void)closeCitiesView:(NSDictionary*)info {
     self.cityInfo = info;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
     NSString* cityname = info[@"name"];
     self.selectCity.titleLabel.text = cityname;
 }
