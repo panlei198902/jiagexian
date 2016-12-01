@@ -48,6 +48,14 @@
     }
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"selectKey"] && [self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:@"请先选择城市" preferredStyle:UIAlertControllerStyleAlert];
+        
+    }
+}
+
+
 #pragma mark -实现MyPickerViewController和MyDataPickerView协议
 - (void)myPickDateViewControllerDidFinish:(MyDatePickerViewController *)controller andSelectedDate:(NSDate*)selected {
     NSDateFormatter* date = [[NSDateFormatter alloc] init];
@@ -68,12 +76,11 @@
     [self.priceRange setTitle:selected forState:UIControlStateNormal];
 }
 
+//按钮点击事件
 - (IBAction)selectPrice:(id)sender {
     [self.priceSelect showInView:self.view];
 }
-- (IBAction)selectData:(id)sender {
-    [self.checkoutDateViewController showInView:self.view];
-}
+
 - (IBAction)selectCheckin:(id)sender {
     [self.checkinDateViewController showInView:self.view];
 

@@ -39,76 +39,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysv-2k-mjq">
-                                <rect key="frame" x="147" y="93" width="62" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroudImage" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-dP-S5M">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SerachImage" translatesAutoresizingMaskIntoConstraints="NO" id="ymL-yr-BR8">
+                                <rect key="frame" x="37" y="145" width="300" height="282"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysv-2k-mjq">
+                                <rect key="frame" x="170" y="194" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="选择城市"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="选择城市">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="xPk-85-pk4" kind="presentation" identifier="CitySegue" id="OfR-kk-K5N"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQi-uM-mp5">
-                                <rect key="frame" x="140" y="182" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQi-uM-mp5">
+                                <rect key="frame" x="157" y="244" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="选择关键字"/>
+                                <state key="normal" title="选择关键字">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="7DF-qU-IpP" kind="presentation" id="q9r-Ci-Gde"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14W-Ac-QZC">
-                                <rect key="frame" x="110" y="258" width="187" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-Ii-WcR">
+                                <rect key="frame" x="134" y="326" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="价格范围"/>
-                                <connections>
-                                    <action selector="selectPrice:" destination="pjW-f1-VTY" eventType="touchUpInside" id="Cqt-zR-Sf4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDk-CO-R9J">
-                                <rect key="frame" x="147" y="326" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="选择日期"/>
-                                <connections>
-                                    <action selector="selectData:" destination="pjW-f1-VTY" eventType="touchUpInside" id="ttP-Uc-ftl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-Ii-WcR">
-                                <rect key="frame" x="117" y="383" width="140" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="入住时间"/>
+                                <state key="normal" title="入住时间">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="selectCheckin:" destination="pjW-f1-VTY" eventType="touchUpInside" id="jTJ-v2-Wjm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-gn-gG7">
-                                <rect key="frame" x="163" y="515" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14W-Ac-QZC">
+                                <rect key="frame" x="87" y="282" width="187" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="搜索"/>
+                                <state key="normal" title="价格范围">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="iSM-l2-O4s" kind="show" id="cHF-xz-jmj"/>
+                                    <action selector="selectPrice:" destination="pjW-f1-VTY" eventType="touchUpInside" id="Cqt-zR-Sf4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-Ye-dD3">
-                                <rect key="frame" x="125" y="443" width="125" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-Ye-dD3">
+                                <rect key="frame" x="149" y="370" width="125" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="退房时间"/>
+                                <state key="normal" title="退房时间">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="selectCheckout:" destination="pjW-f1-VTY" eventType="touchUpInside" id="ljk-fR-vBH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-gn-gG7">
+                                <rect key="frame" x="172" y="458" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="搜索">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iSM-l2-O4s" kind="show" id="cHF-xz-jmj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5g8-dP-S5M" firstAttribute="top" secondItem="7g4-1I-uoo" secondAttribute="bottom" id="DGV-vh-3vg"/>
+                            <constraint firstItem="ymL-yr-BR8" firstAttribute="centerX" secondItem="xYl-kP-gE1" secondAttribute="centerX" id="R2s-eK-DVS"/>
+                            <constraint firstItem="6aW-Ae-s0z" firstAttribute="top" secondItem="5g8-dP-S5M" secondAttribute="bottom" id="XXR-xB-BTr"/>
+                            <constraint firstAttribute="trailing" secondItem="5g8-dP-S5M" secondAttribute="trailing" id="apk-eS-Xil"/>
+                            <constraint firstItem="5g8-dP-S5M" firstAttribute="leading" secondItem="xYl-kP-gE1" secondAttribute="leading" id="pPA-dQ-hMq"/>
+                            <constraint firstItem="ymL-yr-BR8" firstAttribute="top" secondItem="7g4-1I-uoo" secondAttribute="bottom" constant="79" id="vpA-p2-q00"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="酒店搜索" id="ent-ML-jPi"/>
                     <connections>
                         <outlet property="checkInTime" destination="Ux7-Ii-WcR" id="FmR-5W-Lfx"/>
                         <outlet property="checkOutTime" destination="IFi-Ye-dD3" id="dhe-vB-sGG"/>
                         <outlet property="priceRange" destination="14W-Ac-QZC" id="7Ra-B3-g5R"/>
-                        <outlet property="selectDate" destination="mDk-CO-R9J" id="5q9-Ic-sW5"/>
+                        <outlet property="selectCity" destination="Ysv-2k-mjq" id="yNv-DV-4hI"/>
+                        <outlet property="selectKey" destination="AQi-uM-mp5" id="kkd-VJ-Nqm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXg-Zn-hhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="-658.02098950524737"/>
+            <point key="canvasLocation" x="562.5" y="-658.09859154929575"/>
         </scene>
         <!--城市选择-->
         <scene sceneID="Moa-Wv-Q5Z">
@@ -322,6 +342,8 @@
     </scenes>
     <resources>
         <image name="AboutIcon" width="30" height="30"/>
+        <image name="BackgroudImage" width="320" height="568"/>
+        <image name="SerachImage" width="320" height="300"/>
         <image name="TagSearch" width="30" height="30"/>
     </resources>
 </document>

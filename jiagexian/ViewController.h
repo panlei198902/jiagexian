@@ -15,8 +15,9 @@
 
 - (IBAction)selectPrice:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *selectCity;
+@property (weak, nonatomic) IBOutlet UIButton *selectKey;
 @property (weak, nonatomic) IBOutlet UIButton *priceRange;
-@property (weak, nonatomic) IBOutlet UIButton *selectDate;
 @property (weak, nonatomic) IBOutlet UIButton *checkInTime;
 @property (weak, nonatomic) IBOutlet UIButton *checkOutTime;
 
