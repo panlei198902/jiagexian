@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "HotelBL.h"
+
+
+
 @interface ViewController ()
 
 @end
@@ -32,12 +35,96 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(queryKeyFinished:)
+                                                 name:BLQueryKeyFinishedNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(queryKeyFailed:)
+                                                 name:BLQueryKeyFailedNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(queryHotelFinished:)
+                                                 name:BLQueryHotelFinishedNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(queryHotelFailed:)
+                                                 name:BLQueryHotelFailedNotification
+                                               object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+//接受BL查询关键字成功通知
+- (void)queryKeyFinished:(NSNotification*)not {
+    
+    self.keyDict = not.object;
+    if (self.keyDict != nil) {
+        [self performSegueWithIdentifier:@"SelectKey" sender:nil];
+    } else {
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:@"没有数据" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+        [alertView addAction:cancelButton];
+        [self presentViewController:alertView animated:YES completion:nil];
+    }
+}
+
+//接受BL查询关键字失败通知
+- (void)queryKeyFailed:(NSNotification*)not {
+    
+    NSError *error = [not object];
+    NSString *errorStr = [error localizedDescription];
+    
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"出错信息" message:errorStr preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [alertView addAction:cancelButton];
+    [self presentViewController:alertView animated:YES completion:nil];
+}
+
+//接受BL查询Hotel信息成功通知
+- (void)queryHotelFinished:(NSNotification*)not {
+    self.hotelList = not.object;
+    if (self.hotelList == nil || [self.hotelList count] == 0) {
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"出错信息" message:@"没有数据" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+        [alertView addAction:cancelButton];
+        [self presentViewController:alertView animated:YES completion:nil];
+    } else {
+        [self performSegueWithIdentifier:@"queryHotel" sender:nil];
+    }
+}
+
+//接受BL查询Hotel信息s失败通知
+- (void)queryHotelFailed:(NSNotification*)not {
+    NSError *error = not.object;
+    NSString *errorStr = [error localizedDescription];
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"出错信息" message:errorStr preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [alertView addAction:cancelButton];
+    [self presentViewController:alertView animated:YES completion:nil];
+    
+}
 #pragma mark -实现citiesViewControllerDelegate协议
+//关闭城市选择view方法
 - (void)closeCitiesView:(NSDictionary*)info {
     self.cityInfo = info;
     [self dismissViewControllerAnimated:NO completion:nil];
     NSString* cityname = info[@"name"];
     self.selectCity.titleLabel.text = cityname;
+}
+
+//关闭关键字选择view方法
+- (void)closeKeysView:(NSString *)selectKey {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.selectKey setTitle:selectKey forState:UIControlStateNormal];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -55,33 +142,40 @@
         UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
         [alertView addAction:cancelButton];
         [self presentViewController:alertView animated:YES completion:nil];
-        
         return NO;
     } else if ([identifier isEqualToString:@"SelectKey"]) {
-        [[HotelBL sharedHoteolBL] selectKey:self.selectKey.titleLabel.text];
+        [[HotelBL sharedHoteolBL] selectKey:self.selectCity.titleLabel.text];
         return NO;
-    } else if ([identifier isEqualToString:@"queryHotel"]) {
-        NSString *errorMsg;
+    } else if  ([identifier isEqualToString:@"queryHotel"]) {
+        NSString *errorMsg ;
         
         if ([self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
             errorMsg = @"请选择城市";
         } else if ([self.selectKey.titleLabel.text isEqualToString:@"选择关键字"]) {
             errorMsg = @"请选择关键字";
-        } else if ([self.checkInTime.titleLabel.text isEqualToString:@"入住时间"]) {
+        } else if ([self.checkInTime.titleLabel.text isEqualToString:@"选择日期"]) {
             errorMsg = @"请选择入住日期";
-        } else if ([self.checkOutTime.titleLabel.text isEqualToString:@"退房时间"]) {
-            errorMsg = @"请选择退房时间";
+        } else if ([self.checkOutTime.titleLabel.text isEqualToString:@"选择日期"]) {
+            errorMsg = @"请选择退房日期";
         }
         
         if (errorMsg) {
-            UIAlertController *noSelectAnItem = [UIAlertController alertControllerWithTitle:@"提示信息" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
-            [noSelectAnItem addAction:cancelButton];
-            [self presentViewController:noSelectAnItem animated:YES completion:nil];
-            
+            [alertView addAction:cancelButton];
+            [self presentViewController:alertView animated:YES completion:nil];
             return NO;
         }
-        
+    self.hoteQueryKey = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                         [self.cityInfo objectForKey:@"Plcityid"], @"Plcityid",
+                         @"1",@"currentPage",
+                         self.selectKey.titleLabel.text, @"key",
+                         self.priceRange.titleLabel.text, @"Price",
+                         self.checkInTime.titleLabel.text, @"Checkin",
+                         self.checkOutTime.titleLabel.text, @"Checkout",
+                         nil];
+    
+    return NO;
     }
     return YES;
 }

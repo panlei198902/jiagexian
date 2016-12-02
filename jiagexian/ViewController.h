@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CitiesViewController.h"
+#import "KeysViewController.h"
 #import "MyDatePickerViewController.h"
 #import "MyPickerViewController.h"
 
-@interface ViewController : UIViewController <CitiesViewControllerDelegate, MyDatePickerViewControllerDelegate, MyPickerViewControllerDelegate>
+@interface ViewController : UIViewController <CitiesViewControllerDelegate, MyDatePickerViewControllerDelegate, MyPickerViewControllerDelegate, KeysViewContollerDelegate>
 
 - (IBAction)selectPrice:(id)sender;
 
@@ -21,6 +22,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkInTime;
 @property (weak, nonatomic) IBOutlet UIButton *checkOutTime;
 
+//关键字查询结果
+@property(nonatomic, strong) id keyDict;
+//Hotel查询结果
+@property(nonatomic,strong) id hotelList;
+//Hotel查询条件
+@property(nonatomic,strong) id hoteQueryKey;
 
 @property (nonatomic, strong) NSDictionary* cityInfo;
 

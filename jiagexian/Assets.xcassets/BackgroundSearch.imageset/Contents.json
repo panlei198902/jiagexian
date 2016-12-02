@@ -2,28 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "background--4s.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "background--5s.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "filename" : "seach@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
-      "filename" : "seach@3x.png",
+      "filename" : "background--6.png",
       "scale" : "3x"
     }
   ],
