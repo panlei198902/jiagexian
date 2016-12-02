@@ -51,8 +51,11 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"selectKey"] && [self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
         UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:@"请先选择城市" preferredStyle:UIAlertControllerStyleAlert];
-        
+        UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+        [alertView addAction:cancelButton];
+        return NO;
     }
+    return YES;
 }
 
 
