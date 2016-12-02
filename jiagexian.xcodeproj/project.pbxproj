@@ -18,6 +18,7 @@
 		C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */; };
 		C29CAC7A1DEAD7C9005044F5 /* KeysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC791DEAD7C9005044F5 /* KeysViewController.m */; };
 		C29CAC7D1DEAD7D6005044F5 /* RoomsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */; };
+		C2A03E601DF16A660048B279 /* HotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A03E5F1DF16A660048B279 /* HotelTableViewCell.m */; };
 		C2CACDCE1DEEA49300FC2BD1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACDCD1DEEA49300FC2BD1 /* AboutViewController.m */; };
 		C2CACDD31DEEA54F00FC2BD1 /* HotelListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACDD21DEEA54F00FC2BD1 /* HotelListTableViewController.m */; };
 		C2CACDD51DEEAB1900FC2BD1 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2CACDD41DEEAB1900FC2BD1 /* cities.plist */; };
@@ -105,6 +106,9 @@
 		C29CAC7B1DEAD7D6005044F5 /* RoomsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsTableViewController.h; sourceTree = "<group>"; };
 		C29CAC7C1DEAD7D6005044F5 /* RoomsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsTableViewController.m; sourceTree = "<group>"; };
 		C29CACA21DEAD85A005044F5 /* BusinessLayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BusinessLayer.xcodeproj; path = BusinessLayer/BusinessLayer.xcodeproj; sourceTree = "<group>"; };
+		C2A03E5C1DF15ADB0048B279 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C2A03E5E1DF16A660048B279 /* HotelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelTableViewCell.h; sourceTree = "<group>"; };
+		C2A03E5F1DF16A660048B279 /* HotelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelTableViewCell.m; sourceTree = "<group>"; };
 		C2CACDCC1DEEA49300FC2BD1 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		C2CACDCD1DEEA49300FC2BD1 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		C2CACDD11DEEA54F00FC2BD1 /* HotelListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListTableViewController.h; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				C29CAC731DEAD6B7005044F5 /* Tableview */,
 				C29CAC431DEAD6AA005044F5 /* AppDelegate.h */,
 				C29CAC441DEAD6AA005044F5 /* AppDelegate.m */,
+				C2A03E5C1DF15ADB0048B279 /* PrefixHeader.pch */,
 				C29CAC461DEAD6AA005044F5 /* ViewController.h */,
 				C29CAC471DEAD6AA005044F5 /* ViewController.m */,
 				C29CAC491DEAD6AA005044F5 /* Main.storyboard */,
@@ -222,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				C29CAC751DEAD7B5005044F5 /* CitiesViewController.h */,
+				C2A03E5E1DF16A660048B279 /* HotelTableViewCell.h */,
+				C2A03E5F1DF16A660048B279 /* HotelTableViewCell.m */,
 				C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */,
 				C29CAC781DEAD7C9005044F5 /* KeysViewController.h */,
 				C29CAC791DEAD7C9005044F5 /* KeysViewController.m */,
@@ -450,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A03E601DF16A660048B279 /* HotelTableViewCell.m in Sources */,
 				C2CACDD31DEEA54F00FC2BD1 /* HotelListTableViewController.m in Sources */,
 				C29CAC481DEAD6AA005044F5 /* ViewController.m in Sources */,
 				C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */,
@@ -549,6 +557,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = jiagexian/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -594,6 +603,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = jiagexian/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

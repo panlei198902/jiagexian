@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CitiesViewController.h"
+#import "KeysViewController.h"
 #import "MyDatePickerViewController.h"
 #import "MyPickerViewController.h"
 
-@interface ViewController : UIViewController <CitiesViewControllerDelegate, MyDatePickerViewControllerDelegate, MyPickerViewControllerDelegate>
+@interface ViewController : UIViewController <CitiesViewControllerDelegate, MyDatePickerViewControllerDelegate, MyPickerViewControllerDelegate, KeysViewContollerDelegate>
 
 - (IBAction)selectPrice:(id)sender;
 

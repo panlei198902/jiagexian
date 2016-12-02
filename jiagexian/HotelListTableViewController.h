@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HotelTableViewCell.h"
+@interface HotelListTableViewController : UITableViewController {
+    int currentPage; //当前页数
+}
 
-@interface HotelListTableViewController : UITableViewController
+
+
+//查询条件
+@property(nonatomic,strong) NSMutableDictionary* queryKey;
+//查询结果
+@property(nonatomic,strong) NSMutableArray *list;
+//加载视图单元格
+@property (weak, nonatomic) IBOutlet UIView *loadViewCell;
+
+//查询房间条件
+@property(nonatomic,strong) NSMutableDictionary* queryRoomKey;
+
+//查询房间结果
+@property(nonatomic,strong) NSMutableArray *roomList;
 
 @end
