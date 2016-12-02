@@ -227,9 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				C29CAC751DEAD7B5005044F5 /* CitiesViewController.h */,
+				C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */,
 				C2A03E5E1DF16A660048B279 /* HotelTableViewCell.h */,
 				C2A03E5F1DF16A660048B279 /* HotelTableViewCell.m */,
-				C29CAC761DEAD7B5005044F5 /* CitiesViewController.m */,
 				C29CAC781DEAD7C9005044F5 /* KeysViewController.h */,
 				C29CAC791DEAD7C9005044F5 /* KeysViewController.m */,
 				C29CAC7B1DEAD7D6005044F5 /* RoomsTableViewController.h */,

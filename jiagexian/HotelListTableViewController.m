@@ -130,10 +130,26 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+    HotelTableViewCell *cell = (HotelTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    NSDictionary *dict = [self.list objectAtIndex:indexPath.row];
     
+    cell.hotelName.text = [dict valueForKey:@"name"];
+    cell.tel.text = [dict valueForKey:@"phone"];
+    cell.address.text = [dict valueForKey:@"address"];
+    cell.price.text = [dict valueForKey:@"lowprice"];
+    cell.grade.text = [dict valueForKey:@"grade"];
+    
+    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"myIndex" ofType:@"html"];
+    NSMutableString *html = [[NSMutableString alloc] initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSRange range = [html rangeOfString:@"####"];
+    if (range.location != NSNotFound) {
+        NSString *src = [dict valueForKey:@"img"];
+        [html replaceCharactersInRange:range withString:src];
+    }
+    [cell.image loadHTMLString:html baseURL:nil];
     return cell;
 }
 
