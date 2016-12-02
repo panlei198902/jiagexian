@@ -21,6 +21,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkInTime;
 @property (weak, nonatomic) IBOutlet UIButton *checkOutTime;
 
+//关键字查询结果
+@property(nonatomic, strong) id keyDict;
+//Hotel查询结果
+@property(nonatomic,strong) id hotelList;
+//Hotel查询条件
+@property(nonatomic,strong) id hoteQueryKey;
 
 @property (nonatomic, strong) NSDictionary* cityInfo;
 

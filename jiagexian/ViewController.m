@@ -54,7 +54,41 @@
         UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:@"请先选择城市" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
         [alertView addAction:cancelButton];
+        [self presentViewController:alertView animated:YES completion:nil];
         return NO;
+    } else if ([identifier isEqualToString:@"SelectKey"]) {
+        [[HotelBL sharedHoteolBL] selectKey:self.selectCity.titleLabel.text];
+        return NO;
+    } else if  ([identifier isEqualToString:@"queryHotel"]) {
+        NSString *errorMsg ;
+        
+        if ([self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
+            errorMsg = @"请选择城市";
+        } else if ([self.selectKey.titleLabel.text isEqualToString:@"选择关键字"]) {
+            errorMsg = @"请选择关键字";
+        } else if ([self.checkInTime.titleLabel.text isEqualToString:@"选择日期"]) {
+            errorMsg = @"请选择入住日期";
+        } else if ([self.checkOutTime.titleLabel.text isEqualToString:@"选择日期"]) {
+            errorMsg = @"请选择退房日期";
+        }
+        
+        if (errorMsg) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+            [alertView addAction:cancelButton];
+            [self presentViewController:alertView animated:YES completion:nil];
+            return NO;
+        }
+    self.hoteQueryKey = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                         [self.cityInfo objectForKey:@"Plcityid"], @"Plcityid",
+                         @"1",@"currentPage",
+                         self.selectKey.titleLabel.text, @"key",
+                         self.priceRange.titleLabel.text, @"Price",
+                         self.checkInTime.titleLabel.text, @"Checkin",
+                         self.checkOutTime.titleLabel.text, @"Checkout",
+                         nil];
+    
+    return NO;
     }
     return YES;
 }
