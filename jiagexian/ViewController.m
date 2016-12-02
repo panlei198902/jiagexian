@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "HotelBL.h"
 @interface ViewController ()
 
 @end
@@ -36,7 +36,8 @@
 - (void)closeCitiesView:(NSDictionary*)info {
     self.cityInfo = info;
     [self dismissViewControllerAnimated:YES completion:nil];
-
+    NSString* cityname = info[@"name"];
+    self.selectCity.titleLabel.text = cityname;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -49,7 +50,7 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:@"selectKey"] && [self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
+    if ([identifier isEqualToString:@"SelectKey"] && [self.selectCity.titleLabel.text isEqualToString:@"选择城市"]) {
         UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示信息" message:@"请先选择城市" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
         [alertView addAction:cancelButton];
@@ -73,6 +74,7 @@
     } else if (self.checkoutDateViewController == controller) {
         [self.checkOutTime setTitle:strDate forState:UIControlStateNormal];
     }
+
 }
 
 - (void)myPickViewClose:(NSString*)selected {
