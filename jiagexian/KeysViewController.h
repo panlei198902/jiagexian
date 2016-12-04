@@ -18,7 +18,7 @@
 //关键字类型列表
 @property(nonatomic, strong) NSArray* keyTypeList;
 //关键字字典
-@property(nonatomic, strong) NSDictionary* keyDict;
+@property(nonatomic, strong) NSDictionary *keyDict;
 
 @property (nonatomic,weak) id<KeysViewContollerDelegate> delegate;
 
