@@ -184,6 +184,7 @@
                          self.checkInTime.titleLabel.text, @"Checkin",
                          self.checkOutTime.titleLabel.text, @"Checkout",
                          nil];
+        [[HotelBL sharedHoteolBL] queryHotel:self.hoteQueryKey];
     
     return NO;
     }

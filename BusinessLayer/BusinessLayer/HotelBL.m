@@ -13,7 +13,7 @@
 
 #define HOST_NAME @"jiagexian.com"
 #define KEY_QUERY_URL @"/ajaxplcheck.mobile?method=mobilesuggest&v=1&city=%@"
-#define HOTEL_QUERY_URL @"/hotelListForMobile?newSearch=1"
+#define HOTEL_QUERY_URL @"/hotelListForMobile.mobile?newSearch=1"
 @implementation HotelBL
 
 static HotelBL *instance = nil;
@@ -46,8 +46,10 @@ static HotelBL *instance = nil;
 }
 - (void)queryHotel:(NSDictionary*)keyInfo{
     NSString* strURL = [[NSString alloc] initWithFormat:HOTEL_QUERY_URL];
-    strURL = [strURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
-    MKNetworkHost* host = [[MKNetworkHost alloc] initWithHostName:HOST_NAME];
+    strURL = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; //需要解决
+    NSLog(@"strURL: %@",strURL);
+
+
     //准备参数
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
@@ -62,13 +64,13 @@ static HotelBL *instance = nil;
     //priceSlider_maxSliderDisplay 最高价格，从表示层price键取得
     NSString* price = [keyInfo objectForKey:@"Price"];
     if ([price isEqualToString:@"价格不限"]) {
-        [params setValue:[keyInfo objectForKey:@"￥0"] forKey:@"pricesSlider_minSliderDisplay"];
-        [params setValue:[keyInfo objectForKey:@"￥3000+"] forKey:@"pricesSlider_maxSliderDisplay"];
+        [params setValue:[keyInfo objectForKey:@"￥0"] forKey:@"priceSlider_minSliderDisplay"];
+        [params setValue:[keyInfo objectForKey:@"￥3000+"] forKey:@"priceSlider_maxSliderDisplay"];
     } else {
         NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:@"-> "];
         NSArray* tempArray = [price componentsSeparatedByCharactersInSet:set];
-        [params setValue:tempArray[0] forKey:@"pricesSlider_minSliderDisplay"];
-        [params setValue:tempArray[4] forKey:@"pricesSlider_maxSliderDisplay"];
+        [params setValue:tempArray[0] forKey:@"priceSlider_minSliderDisplay"];
+        [params setValue:tempArray[4] forKey:@"priceSlider_maxSliderDisplay"];
     }
     //fromDate 入住日期，从表示层checkin键获得
     [params setValue:[keyInfo objectForKey:@"checkin"] forKey:@"fromDate"];
@@ -76,11 +78,11 @@ static HotelBL *instance = nil;
     [params setValue:[keyInfo objectForKey:@"checkout"] forKey:@"toDate"];
 
 
-    
+    MKNetworkHost* host = [[MKNetworkHost alloc] initWithHostName:HOST_NAME];
     MKNetworkRequest *request = [host requestWithPath:strURL params:params httpMethod:@"POST"];
     
     [request addCompletionHandler:^(MKNetworkRequest *completedRequest) {
-        NSLog(@"request Data : %@",completedRequest.responseAsString);
+
         NSData* data = [completedRequest responseData];
         
         //解析数据
@@ -89,7 +91,7 @@ static HotelBL *instance = nil;
         
         TBXML *tbxml = [[TBXML alloc] initWithXMLData:data error:&error];
         
-        if (error == nil) {  //成功创建tbxml对象
+        if (!error) {  //成功创建tbxml对象
             TBXMLElement *root = tbxml.rootXMLElement;
             
             if (root) {

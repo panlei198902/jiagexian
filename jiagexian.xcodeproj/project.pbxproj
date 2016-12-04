@@ -28,6 +28,7 @@
 		C2CACE4E1DEFC7C100FC2BD1 /* MyDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2CACE491DEFC7C100FC2BD1 /* MyDatePickerViewController.xib */; };
 		C2CACE4F1DEFC7C100FC2BD1 /* MyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACE4B1DEFC7C100FC2BD1 /* MyPickerViewController.m */; };
 		C2CACE501DEFC7C100FC2BD1 /* MyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2CACE4C1DEFC7C100FC2BD1 /* MyPickerViewController.xib */; };
+		C2E195B21DF4643D00FBAF82 /* myIndex.html in Resources */ = {isa = PBXBuildFile; fileRef = C2E195B11DF4643D00FBAF82 /* myIndex.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		C2CACE4A1DEFC7C100FC2BD1 /* MyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPickerViewController.h; sourceTree = "<group>"; };
 		C2CACE4B1DEFC7C100FC2BD1 /* MyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerViewController.m; sourceTree = "<group>"; };
 		C2CACE4C1DEFC7C100FC2BD1 /* MyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPickerViewController.xib; sourceTree = "<group>"; };
+		C2E195B11DF4643D00FBAF82 /* myIndex.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = myIndex.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				C29CAC461DEAD6AA005044F5 /* ViewController.h */,
 				C29CAC471DEAD6AA005044F5 /* ViewController.m */,
 				C29CAC491DEAD6AA005044F5 /* Main.storyboard */,
+				C2E195B11DF4643D00FBAF82 /* myIndex.html */,
 				C29CAC4C1DEAD6AA005044F5 /* Assets.xcassets */,
 				C2CACDD41DEEAB1900FC2BD1 /* cities.plist */,
 				C29CAC4E1DEAD6AA005044F5 /* LaunchScreen.storyboard */,
@@ -429,6 +432,7 @@
 			files = (
 				C2CACE501DEFC7C100FC2BD1 /* MyPickerViewController.xib in Resources */,
 				C29CAC501DEAD6AA005044F5 /* LaunchScreen.storyboard in Resources */,
+				C2E195B21DF4643D00FBAF82 /* myIndex.html in Resources */,
 				C29CAC4D1DEAD6AA005044F5 /* Assets.xcassets in Resources */,
 				C29CAC4B1DEAD6AA005044F5 /* Main.storyboard in Resources */,
 				C2CACDD51DEEAB1900FC2BD1 /* cities.plist in Resources */,
