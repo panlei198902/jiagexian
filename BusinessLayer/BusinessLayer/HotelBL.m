@@ -26,12 +26,13 @@ static HotelBL *instance = nil;
 }
 - (void)selectKey:(NSString*)city{
     NSString* strURL = [[NSString alloc] initWithFormat:KEY_QUERY_URL, city];
-    strURL = [strURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
+    strURL = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; //需要解决
+    NSLog(@"strURL: %@",strURL);
     MKNetworkHost* host = [[MKNetworkHost alloc] initWithHostName:HOST_NAME];
     MKNetworkRequest *request = [host requestWithPath:strURL];
     
     [request addCompletionHandler:^(MKNetworkRequest *completedRequest) {
-        NSLog(@"request Data : %@",completedRequest.responseAsString);
+//        NSLog(@"request Data : %@",completedRequest.responseAsString);
         NSData* data = [completedRequest responseData];
         NSDictionary* resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:BLQueryKeyFinishedNotification object:resDict];

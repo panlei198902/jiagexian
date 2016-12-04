@@ -133,6 +133,16 @@
         CitiesViewController* citiesViewController = (CitiesViewController*)nvgViewController.topViewController ;
         citiesViewController.cityDelegate = self;
         
+    } else if ([[segue identifier] isEqualToString:@"SelectKey"]) {
+        UINavigationController *nvgViewController = (UINavigationController*)[segue destinationViewController];
+        KeysViewController *keyViewController = (KeysViewController*)[nvgViewController topViewController];
+        keyViewController.delegate = self;
+        keyViewController.keyDict = self.keyDict;
+    } else if ([[segue identifier] isEqualToString:@"queryHotel"]) {
+        UINavigationController *nvgViewController = (UINavigationController*)[segue destinationViewController];
+        HotelListTableViewController *hotelListViewController = (HotelListTableViewController*)[nvgViewController topViewController];
+        hotelListViewController.list = self.hotelList;
+        hotelListViewController.queryKey = self.hoteQueryKey;
     }
 }
 

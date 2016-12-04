@@ -11,6 +11,7 @@
 #import "KeysViewController.h"
 #import "MyDatePickerViewController.h"
 #import "MyPickerViewController.h"
+#import "HotelListTableViewController.h"
 
 @interface ViewController : UIViewController <CitiesViewControllerDelegate, MyDatePickerViewControllerDelegate, MyPickerViewControllerDelegate, KeysViewContollerDelegate>
 
