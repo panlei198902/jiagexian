@@ -61,7 +61,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
+} 
 
 //接受BL查询关键字成功通知
 - (void)queryKeyFinished:(NSNotification*)not {
@@ -118,7 +118,7 @@
     self.cityInfo = info;
     [self dismissViewControllerAnimated:NO completion:nil];
     NSString* cityname = info[@"name"];
-    self.selectCity.titleLabel.text = cityname;
+    [self.selectCity setTitle:cityname forState:UIControlStateNormal];
 }
 
 //关闭关键字选择view方法
