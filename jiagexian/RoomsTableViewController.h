@@ -10,4 +10,5 @@
 
 @interface RoomsTableViewController : UITableViewController
 
+@property(nonatomic,strong) NSMutableArray *roomList;
 @end

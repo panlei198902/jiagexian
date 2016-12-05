@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HotelTableViewCell.h"
+#import "HotelBL.h"
+#import "RoomBL.h"
+#import "RoomsTableViewController.h"
 @interface HotelListTableViewController : UITableViewController {
     int currentPage; //当前页数
 }
@@ -16,6 +19,7 @@
 
 //查询条件
 @property(nonatomic,strong) NSMutableDictionary* queryKey;
+
 //查询结果
 @property(nonatomic,strong) NSMutableArray *list;
 //加载视图单元格

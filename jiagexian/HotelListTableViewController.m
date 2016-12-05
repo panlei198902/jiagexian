@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"酒店列表";
+    currentPage = 1;
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BackgroundSearch"]];
     [backgroundView setFrame:self.tableView.frame];
     self.tableView.backgroundView = backgroundView;
@@ -153,6 +154,43 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.list count] == indexPath.row + 1 && self.loadViewCell.hidden == NO) {
+        NSLog(@"load data....");
+        currentPage ++;
+        
+        NSString *str = [[NSString alloc] initWithFormat:@"%i",currentPage];
+        [self.queryKey setObject:str forKey:@"currentPage"];
+        
+        [[HotelBL sharedHoteolBL] queryHotel:self.queryKey];
+    }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"showRoomDetail"]) {
+        NSMutableDictionary *qkey = [[NSMutableDictionary alloc] init];
+        [qkey setObject:[self.queryKey objectForKey:@"Checkin"] forKey:@"Checkin"];
+        [qkey setObject:[self.queryKey objectForKey:@"Checkout"] forKey:@"Checkout"];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *dict = [self.list objectAtIndex:indexPath.row];
+        [qkey setObject:[dict objectForKey:@"id"] forKey:@"hotelId]"];
+        
+        self.queryRoomKey = qkey;
+        [[RoomBL sharedInstance] queryRoom:self.queryRoomKey];
+        
+
+    }
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showRoomDetail"]) {
+        RoomsTableViewController *roomList = [segue destinationViewController];
+        roomList.roomList = self.roomList;
+        
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -191,10 +229,7 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+
 */
 
 @end

@@ -365,7 +365,7 @@
 				TargetAttributes = {
 					C29CAC3C1DEAD6AA005044F5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 2NHV9XL52A;
+						DevelopmentTeam = 83E38YTX4T;
 						ProvisioningStyle = Automatic;
 					};
 					C29CAC551DEAD6AA005044F5 = {
@@ -625,12 +625,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2NHV9XL52A;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 83E38YTX4T;
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = /Users/derexpan/Code/jiagexian/BusinessLayer/BusinessLayer;
 				INFOPLIST_FILE = jiagexian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = derex.jiagexian;
+				PRODUCT_BUNDLE_IDENTIFIER = ssdd.jiagexian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -639,12 +640,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2NHV9XL52A;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 83E38YTX4T;
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = /Users/derexpan/Code/jiagexian/BusinessLayer/BusinessLayer;
 				INFOPLIST_FILE = jiagexian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = derex.jiagexian;
+				PRODUCT_BUNDLE_IDENTIFIER = ssdd.jiagexian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -70,7 +70,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-Ii-WcR">
                                 <rect key="frame" x="134" y="326" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="入住时间">
+                                <state key="normal" title="选择日期">
                                     <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -80,7 +80,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14W-Ac-QZC">
                                 <rect key="frame" x="87" y="282" width="187" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="价格范围">
+                                <state key="normal" title="价格不限">
                                     <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -90,7 +90,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-Ye-dD3">
                                 <rect key="frame" x="149" y="370" width="125" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="退房时间">
+                                <state key="normal" title="选择日期">
                                     <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -195,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w22-b8-gXb" id="V9Z-wF-wnr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -225,17 +225,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Vpw-OA-KQn">
+                            <rect key="frame" x="0.0" y="199" width="375" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTv-Cy-Ms1">
+                                    <rect key="frame" x="176" y="9" width="66" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DUM-eI-7ja">
+                                    <rect key="frame" x="142" y="10" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="DUM-eI-7ja" firstAttribute="leading" secondItem="Vpw-OA-KQn" secondAttribute="leading" constant="142" id="707-Kb-XDz"/>
+                                <constraint firstItem="xTv-Cy-Ms1" firstAttribute="leading" secondItem="DUM-eI-7ja" secondAttribute="trailing" constant="14" id="Ha5-CR-9cT"/>
+                                <constraint firstItem="xTv-Cy-Ms1" firstAttribute="leading" secondItem="DUM-eI-7ja" secondAttribute="trailing" constant="14" id="Zqd-f5-gNa"/>
+                                <constraint firstAttribute="bottom" secondItem="xTv-Cy-Ms1" secondAttribute="bottom" constant="10" id="bux-Qe-Xao"/>
+                                <constraint firstItem="xTv-Cy-Ms1" firstAttribute="top" secondItem="Vpw-OA-KQn" secondAttribute="top" constant="9" id="oFH-X3-y2g"/>
+                                <constraint firstItem="DUM-eI-7ja" firstAttribute="top" secondItem="Vpw-OA-KQn" secondAttribute="top" constant="10" id="wEC-uw-hQv"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="107" id="vbN-mI-913" customClass="HotelTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbN-mI-913" id="alK-KG-Xmw">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="107"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puV-4P-uIV">
-                                            <rect key="frame" x="18" y="8" width="101" height="90"/>
+                                            <rect key="frame" x="15" y="8" width="101" height="90"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="mWX-yQ-Pq4"/>
+                                                <constraint firstAttribute="width" constant="101" id="rjE-tM-Noe"/>
+                                            </constraints>
                                         </webView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京饭店" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Et-FK-dUS">
                                             <rect key="frame" x="137" y="8" width="70" height="21"/>
@@ -279,13 +307,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="6Et-FK-dUS" firstAttribute="leading" secondItem="G33-lS-hKS" secondAttribute="leading" id="2fz-ln-lCq"/>
-                                        <constraint firstItem="6Et-FK-dUS" firstAttribute="leading" secondItem="puV-4P-uIV" secondAttribute="trailing" constant="18" id="7gq-5l-coE"/>
+                                        <constraint firstItem="6Et-FK-dUS" firstAttribute="leading" secondItem="puV-4P-uIV" secondAttribute="trailing" constant="21" id="7gq-5l-coE"/>
                                         <constraint firstItem="puV-4P-uIV" firstAttribute="top" secondItem="alK-KG-Xmw" secondAttribute="topMargin" id="7zC-gC-RZZ"/>
                                         <constraint firstItem="puV-4P-uIV" firstAttribute="bottom" secondItem="uFw-od-HNV" secondAttribute="bottom" id="BS2-Fh-RYG"/>
                                         <constraint firstItem="3Wq-bo-Xul" firstAttribute="trailing" secondItem="9pM-bx-kf0" secondAttribute="trailing" id="F9u-ck-JMd"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="9pM-bx-kf0" secondAttribute="bottom" constant="12" id="FhI-a2-Fab"/>
                                         <constraint firstItem="uFw-od-HNV" firstAttribute="top" secondItem="G33-lS-hKS" secondAttribute="bottom" constant="13" id="GrD-aT-vmP"/>
-                                        <constraint firstItem="puV-4P-uIV" firstAttribute="leading" secondItem="alK-KG-Xmw" secondAttribute="leadingMargin" constant="10" id="ICX-AW-eML"/>
+                                        <constraint firstItem="puV-4P-uIV" firstAttribute="leading" secondItem="alK-KG-Xmw" secondAttribute="leadingMargin" constant="7" id="ICX-AW-eML"/>
                                         <constraint firstItem="puV-4P-uIV" firstAttribute="centerY" secondItem="G33-lS-hKS" secondAttribute="centerY" id="UDT-2p-frq"/>
                                         <constraint firstItem="puV-4P-uIV" firstAttribute="bottom" secondItem="alK-KG-Xmw" secondAttribute="bottomMargin" id="VaK-5p-ZDJ"/>
                                         <constraint firstItem="9pM-bx-kf0" firstAttribute="top" secondItem="3Wq-bo-Xul" secondAttribute="bottom" constant="19" id="ZxY-tG-GSr"/>
@@ -312,6 +340,9 @@
                             <outlet property="delegate" destination="iSM-l2-O4s" id="Pvp-ut-AH5"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="loadViewCell" destination="Vpw-OA-KQn" id="C3m-d9-n9W"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2p-Jd-a7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -330,7 +361,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xps-8E-rKg" id="NIl-cJ-48f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
