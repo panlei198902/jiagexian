@@ -1,8 +1,8 @@
 //
-//  NSMutableDictionary+MKNKAdditions.h
-//  MKNetworkKit
+//  UIImageView+MKNetworkKitAdditions.h
+//  MKNetworkKit-iOS
 //
-//  Created by Mugunth Kumar (@mugunthkumar) on 30/07/14.
+//  Created by Mugunth Kumar (@mugunthkumar) on 18/01/13.
 //  Copyright (C) 2011-2020 by Steinlogic Consulting and Training Pte Ltd
 
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,23 +23,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "NSMutableDictionary+MKNKAdditions.h"
+#import <UIKit/UIKit.h>
 
-// Do not use this class for any other purpose.
-// For the most pary use case insensitive dictionary key matching only when you cannot control
-// the creation of dictionary keys In our case, we use this for matching HTTP headers
+extern const float kFromCacheAnimationDuration;
+extern const float kFreshLoadAnimationDuration;
 
-@implementation NSMutableDictionary (MKNKAdditions)
+@class MKNetworkEngine;
+@class MKNetworkOperation;
 
--(void) setObject:(id) obj forCaseInsensitiveKey:(id)aKey {
-  
-  for (NSString *key in self.allKeys) {
-    if ([key compare:aKey options:NSCaseInsensitiveSearch] == NSOrderedSame) {
-      [self setObject:obj forKey:key];
-      return;
-    }
-  }
-  [self setObject:obj forKey:aKey];
-}
-
+@interface UIImageView (MKNetworkKitAdditions)
++(void) setDefaultEngine:(MKNetworkEngine*) engine;
+-(MKNetworkOperation*) setImageFromURL:(NSURL*) url;
+-(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image;
+-(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image animation:(BOOL) yesOrNo;
+-(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image usingEngine:(MKNetworkEngine*) imageCacheEngine animation:(BOOL) yesOrNo;
 @end

@@ -139,10 +139,10 @@
         keyViewController.delegate = self;
         keyViewController.keyDict = self.keyDict;
     } else if ([[segue identifier] isEqualToString:@"queryHotel"]) {
-        UINavigationController *nvgViewController = (UINavigationController*)[segue destinationViewController];
-        HotelListTableViewController *hotelListViewController = (HotelListTableViewController*)[nvgViewController topViewController];
-        hotelListViewController.list = self.hotelList;
+        HotelListTableViewController *hotelListViewController = [segue destinationViewController];
         hotelListViewController.queryKey = self.hoteQueryKey;
+        hotelListViewController.list = self.hotelList;
+
     }
 }
 

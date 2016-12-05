@@ -1,6 +1,6 @@
 //
-//  NSDictionary+MKNKAdditions.h
-//  MKNetworkKit
+//  UIAlertView+MKNetworkKitAdditions.m
+//  MKNetworkKitDemo
 //
 //  Created by Mugunth Kumar (@mugunthkumar) on 11/11/11.
 //  Copyright (C) 2011-2020 by Steinlogic Consulting and Training Pte Ltd
@@ -22,15 +22,20 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+#if TARGET_OS_IPHONE
+#import "UIAlertView+MKNetworkKitAdditions.h"
 
-@interface NSDictionary (MKNKAdditions)
+@implementation UIAlertView (MKNetworkKitAdditions)
 
-// Do not use this method for any other purpose.
-// For the most pary use case insensitive dictionary key matching only when you cannot control
-// the creation of dictionary keys In our case, we use this for matching HTTP headers
++(UIAlertView*) showWithError:(NSError*) networkError {
 
--(id) objectForCaseInsensitiveKey:(id)aKey;
--(NSString*) urlEncodedKeyValueString;
--(NSString*) jsonEncodedKeyValueString;
--(NSString*) plistEncodedKeyValueString;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[networkError localizedDescription]
+                                                    message:[networkError localizedRecoverySuggestion]
+                                                   delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"Dismiss", @"")
+                                          otherButtonTitles:nil];
+    [alert show];
+    return alert;
+}
 @end
+#endif

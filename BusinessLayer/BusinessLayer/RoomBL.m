@@ -42,13 +42,13 @@ static RoomBL *instance = nil;
     [param setValue:[keyInfo objectForKey:@"Checkin"] forKey:@"fromDate"];
     [param setValue:[keyInfo objectForKey:@"Checkout"] forKey:@"toDate"];
     
-    MKNetworkHost *host = [[MKNetworkHost alloc] initWithHostName:HOST_NAME];
-    MKNetworkRequest *op = [host requestWithPath:strURL params:param httpMethod:@"POST"];
+    MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:HOST_NAME customHeaderFields:nil];
+    MKNetworkOperation *op = [engine operationWithPath:strURL params:param httpMethod:@"POST"];
     
-    [op addCompletionHandler:^(MKNetworkRequest *completedRequest) {
+    [op addCompletionHandler:^(MKNetworkOperation *operation) {
         
-        NSLog(@"responseData : %@", completedRequest.responseAsString);
-        NSData *data  = [completedRequest responseData];
+
+        NSData *data  = [operation responseData];
         
         NSMutableArray *list = [NSMutableArray new];
         
@@ -103,9 +103,12 @@ static RoomBL *instance = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:BLQueryRoomFinishedNotification object:list];
         NSLog(@"解析完成...");
         
+    }errorHandler:^(MKNetworkOperation *errorOp, NSError* err) {
+        NSLog(@"MKNetwork请求错误 : %@", [err localizedDescription]);
+        [[NSNotificationCenter defaultCenter] postNotificationName:BLQueryRoomFailedNotification object:err];
     }];
     
-    [host startRequest:op];
+    [engine enqueueOperation:op];
 
 }
 

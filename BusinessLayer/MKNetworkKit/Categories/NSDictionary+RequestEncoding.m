@@ -1,5 +1,5 @@
 //
-//  NSDictionary+MKNKAdditions.m
+//  NSDictionary+RequestEncoding.m
 //  MKNetworkKitDemo
 //
 //  Created by Mugunth Kumar (@mugunthkumar) on 11/11/11.
@@ -23,22 +23,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "NSString+MKNKAdditions.h"
+#import "MKNetworkKit.h"
 
-@implementation NSDictionary (MKNKAdditions)
-// Do not use this method for any other purpose.
-// For the most pary use case insensitive dictionary key matching only when you cannot control
-// the creation of dictionary keys In our case, we use this for matching HTTP headers
-
--(id) objectForCaseInsensitiveKey:(id)aKey {
-  
-  for (NSString *key in self.allKeys) {
-    if ([key compare:aKey options:NSCaseInsensitiveSearch] == NSOrderedSame) {
-      return [self objectForKey:key];
-    }
-  }
-  return  nil;
-}
+@implementation NSDictionary (RequestEncoding)
 
 -(NSString*) urlEncodedKeyValueString {
   
@@ -66,7 +53,7 @@
                                                  options:0 // non-pretty printing
                                                    error:&error];
   if(error)
-    NSLog(@"JSON Parsing Error: %@", error);
+    DLog(@"JSON Parsing Error: %@", error);
   
   return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
@@ -79,7 +66,7 @@
                                                             format:NSPropertyListXMLFormat_v1_0
                                                            options:0 error:&error];
   if(error)
-    NSLog(@"JSON Parsing Error: %@", error);
+    DLog(@"JSON Parsing Error: %@", error);
   
   return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

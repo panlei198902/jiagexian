@@ -1,6 +1,6 @@
 //
-//  UIAlertView+MKNKAdditions.h
-//  MKNetworkKit
+//  UIAlertView+MKNetworkKitAdditions.h
+//  MKNetworkKitDemo
 //
 //  Created by Mugunth Kumar (@mugunthkumar) on 11/11/11.
 //  Copyright (C) 2011-2020 by Steinlogic Consulting and Training Pte Ltd
@@ -22,8 +22,10 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 
-@interface UIAlertView (MKNKAdditions)
+@interface UIAlertView (MKNetworkKitAdditions)
 +(UIAlertView*) showWithError:(NSError*) networkError;
 @end
+#endif

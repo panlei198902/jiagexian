@@ -1,6 +1,6 @@
 //
-//  NSString+MKNKAdditions.h
-//  MKNetworkKit
+//  NSDictionary+RequestEncoding.h
+//  MKNetworkKitDemo
 //
 //  Created by Mugunth Kumar (@mugunthkumar) on 11/11/11.
 //  Copyright (C) 2011-2020 by Steinlogic Consulting and Training Pte Ltd
@@ -23,11 +23,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+@interface NSDictionary (RequestEncoding)
 
-@interface NSString (MKNKAdditions)
-
-+ (NSString *) md5StringFromData:(NSData*) data;
-- (NSString*) mk_urlEncodedString;
-- (NSString*) urlDecodedString;
+-(NSString*) urlEncodedKeyValueString;
+-(NSString*) jsonEncodedKeyValueString;
+-(NSString*) plistEncodedKeyValueString;
 @end

@@ -1,6 +1,6 @@
 //
-//  UIAlertView+MKNKAdditions.m
-//  MKNetworkKit
+//  NSString+MKNetworkKitAdditions.h
+//  MKNetworkKitDemo
 //
 //  Created by Mugunth Kumar (@mugunthkumar) on 11/11/11.
 //  Copyright (C) 2011-2020 by Steinlogic Consulting and Training Pte Ltd
@@ -23,21 +23,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "UIAlertView+MKNKAdditions.h"
+@interface NSString (MKNetworkKitAdditions)
 
-@implementation UIAlertView (MKNKAdditions)
-
-+(UIAlertView*) showWithError:(NSError*) networkError {
-
-  NSString *reason = [networkError localizedFailureReason];
-  if(!reason)
-    reason = [networkError localizedDescription];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:reason
-                                                    message:[networkError localizedRecoverySuggestion]
-                                                   delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"Dismiss", @"")
-                                          otherButtonTitles:nil];
-    [alert show];
-    return alert;
-}
+- (NSString *) md5;
++ (NSString*) uniqueString;
+- (NSString*) mk_urlEncodedString;
+- (NSString*) urlDecodedString;
 @end
