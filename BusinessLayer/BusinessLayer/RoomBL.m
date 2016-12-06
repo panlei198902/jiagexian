@@ -30,7 +30,7 @@ static RoomBL *instance = nil;
 
 - (void)queryRoom:(NSDictionary*)keyInfo{
     NSString *strURL = [[NSString alloc] initWithFormat:ROOM_QUERY_URL];
-    strURL = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    strURL = [strURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSLog(@"strURL = %@",strURL);
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     //测试

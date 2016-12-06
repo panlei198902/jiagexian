@@ -27,7 +27,7 @@ static HotelBL *instance = nil;
 -(void)selectKey:(NSString*)city
 {
     NSString *strURL = [[NSString alloc] initWithFormat:KEY_QUERY_URL, city ];
-    strURL = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    strURL = [strURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSLog(@"strURL: %@",strURL);
     MKNetworkEngine *engine = [[MKNetworkEngine alloc]
                                initWithHostName:HOST_NAME customHeaderFields:nil];
