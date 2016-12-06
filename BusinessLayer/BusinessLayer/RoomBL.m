@@ -30,8 +30,8 @@ static RoomBL *instance = nil;
 
 - (void)queryRoom:(NSDictionary*)keyInfo{
     NSString *strURL = [[NSString alloc] initWithFormat:ROOM_QUERY_URL];
-    strURL = [strURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
-    
+    strURL = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"strURL = %@",strURL);
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     //测试
     //    [param setValue:@"100194" forKey:@"supplierid"];
@@ -47,7 +47,7 @@ static RoomBL *instance = nil;
     
     [op addCompletionHandler:^(MKNetworkOperation *operation) {
         
-
+        NSLog(@"responseData : %@", [operation responseString]);
         NSData *data  = [operation responseData];
         
         NSMutableArray *list = [NSMutableArray new];

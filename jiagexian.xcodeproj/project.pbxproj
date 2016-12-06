@@ -28,6 +28,7 @@
 		C2CACE4E1DEFC7C100FC2BD1 /* MyDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2CACE491DEFC7C100FC2BD1 /* MyDatePickerViewController.xib */; };
 		C2CACE4F1DEFC7C100FC2BD1 /* MyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CACE4B1DEFC7C100FC2BD1 /* MyPickerViewController.m */; };
 		C2CACE501DEFC7C100FC2BD1 /* MyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2CACE4C1DEFC7C100FC2BD1 /* MyPickerViewController.xib */; };
+		C2D699891DF65D3600D80798 /* RoomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D699881DF65D3600D80798 /* RoomTableViewCell.m */; };
 		C2E195B21DF4643D00FBAF82 /* myIndex.html in Resources */ = {isa = PBXBuildFile; fileRef = C2E195B11DF4643D00FBAF82 /* myIndex.html */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,8 @@
 		C2CACE4A1DEFC7C100FC2BD1 /* MyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPickerViewController.h; sourceTree = "<group>"; };
 		C2CACE4B1DEFC7C100FC2BD1 /* MyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerViewController.m; sourceTree = "<group>"; };
 		C2CACE4C1DEFC7C100FC2BD1 /* MyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPickerViewController.xib; sourceTree = "<group>"; };
+		C2D699871DF65D3600D80798 /* RoomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomTableViewCell.h; sourceTree = "<group>"; };
+		C2D699881DF65D3600D80798 /* RoomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomTableViewCell.m; sourceTree = "<group>"; };
 		C2E195B11DF4643D00FBAF82 /* myIndex.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = myIndex.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +244,8 @@
 				C2CACDCD1DEEA49300FC2BD1 /* AboutViewController.m */,
 				C2CACDD11DEEA54F00FC2BD1 /* HotelListTableViewController.h */,
 				C2CACDD21DEEA54F00FC2BD1 /* HotelListTableViewController.m */,
+				C2D699871DF65D3600D80798 /* RoomTableViewCell.h */,
+				C2D699881DF65D3600D80798 /* RoomTableViewCell.m */,
 			);
 			name = Tableview;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			files = (
 				C2A03E601DF16A660048B279 /* HotelTableViewCell.m in Sources */,
 				C2CACDD31DEEA54F00FC2BD1 /* HotelListTableViewController.m in Sources */,
+				C2D699891DF65D3600D80798 /* RoomTableViewCell.m in Sources */,
 				C29CAC481DEAD6AA005044F5 /* ViewController.m in Sources */,
 				C29CAC771DEAD7B5005044F5 /* CitiesViewController.m in Sources */,
 				C2CACE4D1DEFC7C100FC2BD1 /* MyDatePickerViewController.m in Sources */,

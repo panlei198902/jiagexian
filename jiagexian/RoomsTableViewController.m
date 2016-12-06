@@ -7,7 +7,7 @@
 //
 
 #import "RoomsTableViewController.h"
-
+#import "RoomTableViewCell.h"
 @interface RoomsTableViewController ()
 
 @end
@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"房间列表";
     
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BackgroundSearch"]];
+    [backgroundView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = backgroundView;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,23 +37,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return [self.roomList count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    RoomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSDictionary *dict = [self.roomList objectAtIndex:indexPath.row];
+    
+    cell.hotelName.text = [dict objectForKey:@"name"];
+    cell.breakfast.text = [dict objectForKey:@"breakfast"];
+    cell.broadband.text = [dict objectForKey:@"broadband"];
+    cell.frontprice.text = [dict objectForKey:@"frontprice"];
+    cell.payway.text = [dict objectForKey:@"paymode"];
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

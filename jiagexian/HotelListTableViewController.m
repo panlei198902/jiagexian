@@ -174,7 +174,7 @@
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDictionary *dict = [self.list objectAtIndex:indexPath.row];
-        [qkey setObject:[dict objectForKey:@"id"] forKey:@"hotelId]"];
+        [qkey setObject:[dict objectForKey:@"id"] forKey:@"hotelId"];
         
         self.queryRoomKey = qkey;
         [[RoomBL sharedInstance] queryRoom:self.queryRoomKey];
@@ -186,7 +186,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showRoomDetail"]) {
-        RoomsTableViewController *roomList = [segue destinationViewController];
+        RoomsTableViewController *roomList = (RoomsTableViewController*)[segue destinationViewController];
         roomList.roomList = self.roomList;
         
     }
