@@ -26,7 +26,7 @@ static HotelBL *instance = nil;
 }
 -(void)selectKey:(NSString*)city
 {
-    NSString *strURL = [[NSString alloc] initWithFormat:KEY_QUERY_URL, city ];
+    NSString *strURL = [[NSString alloc] initWithFormat:KEY_QUERY_URL, city];
     strURL = [strURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSLog(@"strURL: %@",strURL);
     MKNetworkEngine *engine = [[MKNetworkEngine alloc]
@@ -154,6 +154,7 @@ static HotelBL *instance = nil;
                         hotelElement = [TBXML nextSiblingNamed:@"hotel" searchFromElement:hotelElement];
                         
                         [list addObject:dict];
+                        NSLog(@"%@",list);
                     }
                     
                 }
