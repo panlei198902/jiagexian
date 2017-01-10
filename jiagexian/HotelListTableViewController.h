@@ -22,6 +22,7 @@
 
 //查询结果
 @property(nonatomic,strong) NSMutableArray *list;
+
 //加载视图单元格
 @property (weak, nonatomic) IBOutlet UIView *loadViewCell;
 

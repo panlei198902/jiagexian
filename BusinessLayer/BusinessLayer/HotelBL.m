@@ -85,7 +85,7 @@ static HotelBL *instance = nil;
         
         //NSLog(@"responseData : %@", [operation responseString]);
         NSData *data  = [operation responseData];
-//        NSLog(@"data: %@",data);
+        NSLog(@"data: %@",data);
         NSMutableArray *list = [[NSMutableArray alloc] init];
         NSError *error = nil;
         
